@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import QuoteGenerator from "./components/QuoteGenerator";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: "rgb(204,255,229)",
+    };
+    this.getRandomColor = this.getRandomColor.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  getRandomColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return `rgb(${red},${green},${blue})`;
+  }
+
+  handleClick() {
+    const color = this.getRandomColor();
+    this.setState({
+      color,
+    });
+  }
+
+  render() {
+    return (
+      <div className="App" style={{ backgroundColor: this.state.color }}>
+        <QuoteGenerator
+          randomColor={this.state.color}
+          onClick={this.handleClick}
+        />
+      </div>
+    );
+  }
 }
-
-export default App;

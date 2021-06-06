@@ -1,38 +1,56 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 0;
+}
+.quoteGenerator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  background-color: white;
+  border-radius: 1em;
+}
+.quoteBox {
+  display: block;
+
+  width: 100%;
+}
+.quote {
+  margin: 1em 1em 1em 1em;
+  font-size: 1.6rem;
+}
+.author {
+  margin: 1em 1em 1em 1em;
+  text-align: end;
+  font-size: 1.4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.socialButtons {
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.randomQuoteButton {
+  border: none;
+  margin: 1em 1em 1em 1em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+a.fa-facebook {
+  margin-right: 1em;
 }
